@@ -9,10 +9,15 @@ def get_change(amount):
 
     Returns a list of coin values
     """
-    if amount == 0:
-        return []
-    
-    return [amount]
+    coins = [100, 50, 20, 10, 5, 2, 1]
+   
+        
+    change = []
+    for coin in coins:
+        while coin <= amount:
+            amount -= coin
+            change.append(coin)
+    return change
 
 #amount of change back is 0, no coins back
 test_are_equal(get_change(0),[])
@@ -25,4 +30,9 @@ test_are_equal(get_change(10),[10])
 test_are_equal(get_change(20),[20])
 test_are_equal(get_change(50),[50])
 test_are_equal(get_change(100),[100])
-print("all tests pass!")
+# change in more then one coin
+test_are_equal(get_change(3),[2,1])
+test_are_equal(get_change(7),[5,2])
+# return more than 2 coins
+test_are_equal(get_change(9), [5, 2, 2])
+print("All tests pass!")
