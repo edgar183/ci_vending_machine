@@ -42,8 +42,8 @@ def test_not_in(collection, item):
 
 
 def test_between(upper_limit, lower_limit, actual):
+    assert lower_limit <= actual <= upper_limit, "{0} is not between {1} and {2}".format(actual, lower_limit, upper_limit)
     """
     Check to ensure that a number is between two other numbers. Raises
     AssertionError if the number is not between the other two numbers
     """
-assert lower_limit <= actual <= upper_limit, "{0} is not between {1} and {2}".format(actual, lower_limit, upper_limit)
