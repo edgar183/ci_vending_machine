@@ -1,7 +1,10 @@
 #import all functions from test file
 from byotest import *
 
-def get_change(amount):
+euro_coins = [100, 50, 20, 10, 5, 2, 1]
+usd_coins = [100, 50, 25, 10, 5, 2, 1]
+# add 
+def get_change(amount, coins=euro_coins):
     """
     Takes the payment amount and returns the change
 
@@ -9,7 +12,7 @@ def get_change(amount):
 
     Returns a list of coin values
     """
-    coins = [100, 50, 20, 10, 5, 2, 1]
+   
    
         
     change = []
@@ -35,4 +38,5 @@ test_are_equal(get_change(3),[2,1])
 test_are_equal(get_change(7),[5,2])
 # return more than 2 coins
 test_are_equal(get_change(9), [5, 2, 2])
+test_are_equal(get_change(35, usd_coins), [25, 10])
 print("All tests pass!")
